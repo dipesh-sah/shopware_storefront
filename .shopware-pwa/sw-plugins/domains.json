@@ -1,0 +1,28 @@
+{
+  "http://shoptest.bay20.in/public": {
+    "url": "http://shoptest.bay20.in/public",
+    "origin": "http://shoptest.bay20.in",
+    "host": "shoptest.bay20.in",
+    "pathPrefix": "/public",
+    "domainId": "46dfdae01167420d99c2738330f9d8e6",
+    "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+    "snippetSetId": "6652d57113f54b93a85bae3018138729",
+    "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b",
+    "languageName": "English",
+    "languageLabel": "English",
+    "languageLocaleCode": "en-GB"
+  },
+  "https://shoptest.bay20.in/public": {
+    "url": "https://shoptest.bay20.in/public",
+    "origin": "https://shoptest.bay20.in",
+    "host": "shoptest.bay20.in",
+    "pathPrefix": "/public",
+    "domainId": "5f5cde473ced44f6ae5e35741508c8c8",
+    "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+    "snippetSetId": "6652d57113f54b93a85bae3018138729",
+    "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b",
+    "languageName": "English",
+    "languageLabel": "English",
+    "languageLocaleCode": "en-GB"
+  }
+}

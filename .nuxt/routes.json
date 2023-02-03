@@ -1,0 +1,153 @@
+[
+  {
+    "name": "account",
+    "path": "/account",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account.vue",
+    "chunkName": "pages/account",
+    "children": [
+      {
+        "path": "addresses",
+        "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\addresses.vue",
+        "chunkName": "pages/account/addresses",
+        "children": [
+          {
+            "name": "account-addresses",
+            "path": "",
+            "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\addresses\\\\index.vue",
+            "chunkName": "pages/account/addresses/index",
+            "_name": "_652e7594"
+          },
+          {
+            "name": "account-addresses-add",
+            "path": "add",
+            "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\addresses\\\\add\\\\index.vue",
+            "chunkName": "pages/account/addresses/add/index",
+            "_name": "_13166746"
+          },
+          {
+            "name": "account-addresses-add-id",
+            "path": "add/:id",
+            "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\addresses\\\\add\\\\_id.vue",
+            "chunkName": "pages/account/addresses/add/_id",
+            "_name": "_1a944205"
+          }
+        ],
+        "_name": "_47f031cc"
+      },
+      {
+        "path": "orders",
+        "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\orders.vue",
+        "chunkName": "pages/account/orders",
+        "children": [
+          {
+            "name": "account-orders",
+            "path": "",
+            "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\orders\\\\index.vue",
+            "chunkName": "pages/account/orders/index",
+            "_name": "_55755e77"
+          },
+          {
+            "name": "account-orders-id",
+            "path": ":id",
+            "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\orders\\\\_id.vue",
+            "chunkName": "pages/account/orders/_id",
+            "_name": "_7632dac2"
+          }
+        ],
+        "_name": "_07f1e0aa"
+      },
+      {
+        "name": "account-profile",
+        "path": "profile",
+        "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\profile.vue",
+        "chunkName": "pages/account/profile",
+        "_name": "_09243e5a"
+      },
+      {
+        "name": "account-recover-password",
+        "path": "recover/password",
+        "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\account\\\\recover\\\\password.vue",
+        "chunkName": "pages/account/recover/password",
+        "_name": "_fe5157ae"
+      }
+    ],
+    "_name": "_2c0109c6"
+  },
+  {
+    "name": "checkout",
+    "path": "/checkout",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\checkout.vue",
+    "chunkName": "pages/checkout",
+    "_name": "_6ce1b17d"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_84a5457c"
+  },
+  {
+    "name": "newsletter-subscribe",
+    "path": "/newsletter-subscribe",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\newsletter-subscribe.vue",
+    "chunkName": "pages/newsletter-subscribe",
+    "_name": "_4c2ee6ed"
+  },
+  {
+    "name": "order-success",
+    "path": "/order-success",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\order-success.vue",
+    "chunkName": "pages/order-success",
+    "_name": "_790493dd"
+  },
+  {
+    "name": "payment-failure",
+    "path": "/payment-failure",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\payment-failure.vue",
+    "chunkName": "pages/payment-failure",
+    "_name": "_6f2b145c"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\register.vue",
+    "chunkName": "pages/register",
+    "_name": "_a02ec74c"
+  },
+  {
+    "name": "reset-password",
+    "path": "/reset-password",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\reset-password.vue",
+    "chunkName": "pages/reset-password",
+    "_name": "_233598d0"
+  },
+  {
+    "name": "search",
+    "path": "/search",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\search.vue",
+    "chunkName": "pages/search",
+    "_name": "_3870649f"
+  },
+  {
+    "name": "wishlist",
+    "path": "/wishlist",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\wishlist.vue",
+    "chunkName": "pages/wishlist",
+    "_name": "_0413c27c"
+  },
+  {
+    "name": "registration-confirm",
+    "path": "/registration/confirm",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\registration\\\\confirm.vue",
+    "chunkName": "pages/registration/confirm",
+    "_name": "_5afabf80"
+  },
+  {
+    "name": "all",
+    "path": "/*",
+    "component": "E:\\\\Dipesh\\\\demostore\\\\.shopware-pwa\\\\source\\\\pages\\\\_.vue",
+    "chunkName": "pages/_",
+    "_name": "_71460bb8"
+  }
+]

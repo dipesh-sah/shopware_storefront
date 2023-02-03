@@ -1,0 +1,359 @@
+// we're importing here main style variables from theme
+@import "@theme/assets/scss/main";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+// Here you can override you global styles.
+// It will be included once on webside and visible unless some more specific styles in components will extend that
+//
+// note: To override global variables go to variables.scss
+
+// example of global styles you may want to override@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+// Breakpoint
+
+// Breakpoints
+@mixin bp($point) {
+  @if $point ==min768 {
+    @media all and (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $point ==max1679 {
+    @media all and (max-width: 1679px) {
+      @content;
+    }
+  }
+
+  @if $point ==max1496 {
+    @media all and (max-width: 1496px) {
+      @content;
+    }
+  }
+
+  @if $point ==max1365 {
+    @media all and (max-width: 1365px) {
+      @content;
+    }
+  }
+
+  @if $point ==min1280 {
+    @media all and (min-width: 1280px) {
+      @content;
+    }
+  }
+
+  @if $point ==max1279 {
+    @media all and (max-width: 1279px) {
+      @content;
+    }
+  }
+
+  @if $point ==max1023 {
+    @media all and (max-width: 1023px) {
+      @content;
+    }
+  }
+
+  @if $point ==max916 {
+    @media all and (max-width: 916px) {
+      @content;
+    }
+  }
+
+  @if $point ==max767 {
+    @media all and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $point ==max575 {
+    @media all and (max-width: 575px) {
+      @content;
+    }
+  }
+
+  @if $point ==max479 {
+    @media all and (max-width: 479px) {
+      @content;
+    }
+  }
+
+  @if $point ==max395 {
+    @media all and (max-width: 395px) {
+      @content;
+    }
+  }
+
+  @if $point ==max360 {
+    @media all and (max-width: 360px) {
+      @content;
+    }
+  }
+
+  @if $point ==portrait1023 {
+    @media all and (orientation: portrait) and (max-width: 1023px) {
+      @content;
+    }
+  }
+
+  @if $point ==portrait767 {
+    @media all and (orientation: portrait) and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $point ==portrait {
+    @media all and (orientation: portrait) {
+      @content;
+    }
+  }
+}
+
+// Breakpoint Ends
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_center {
+  text-align: center;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  .category-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    .category {
+      position: relative;
+      width: 32%;
+      margin-bottom: 20px;
+      @include bp(max767) {
+        width: 48%;
+      }
+      @include bp(max479) {
+        width: 100%;
+      }
+      .title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #fff;
+        z-index: 99999999;
+      }
+      .image {
+        max-height: 267px;
+        overflow: hidden;
+        img {
+          height: 267px;
+          object-fit: cover;
+          transition: transform 0.3s;
+          width: 100%;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+  .specs {
+    flex-wrap: wrap;
+    .specs-content {
+      width: 30%;
+      text-align: center;
+      padding: 20px;
+      @include bp(max767) {
+        width: 50%;
+      }
+      @include bp(max479) {
+        width: 100%;
+      }
+      &:nth-child(2) {
+        background-color: #151515;
+      }
+      h2 {
+        font-size: 32px;
+        color: #cb9671;
+        font-weight: 700;
+      }
+    }
+  }
+  .specs-images {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    @include bp(max767) {
+      margin: 0 auto;
+    }
+    img {
+      @include bp(max767) {
+        width: 100%;
+      }
+    }
+  }
+  .specialities {
+    text-align: center;
+    margin: 0 16px;
+    h2 {
+      font-size: 32px;
+    }
+  }
+  .awards {
+    h2 {
+      text-align: center;
+      margin: 50px 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .award-image {
+      justify-content: space-between;
+      margin: 0 30px;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      img {
+        @include bp(max767) {
+          margin: 0 auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .butcher-shop {
+    text-align: center;
+    padding: 20px;
+    h2 {
+      font-size: 28px;
+    }
+  }
+  .payment {
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+    @include bp(max479) {
+      width: 100%;
+    }
+    p {
+      margin-top: -5px;
+    }
+  }
+  .types_of_meat {
+    p {
+      font-size: 13px;
+    }
+    table {
+      border: 1px dashed #fff;
+      width: 100%;
+      th {
+        border: 1px dashed #fff;
+        padding: 10px;
+        background-color: #343434;
+      }
+      td {
+        border: 1px dashed #fff;
+        padding: 5px 15px;
+        font-size: 13px;
+        a {
+          color: #fff;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .commitments {
+    margin-top: 80px;
+    .text_center {
+      h2 {
+        font-size: 28px;
+        line-height: 1px;
+      }
+    }
+    .commit_images {
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 0 auto;
+
+      @include bp(max360) {
+        width: 100%;
+      }
+    }
+  }
+  .sponsorship {
+    margin-top: 40px;
+    h2 {
+      font-size: 28px;
+      line-height: 1px;
+    }
+  }
+  .social_icons {
+    margin-top: 20px;
+    a {
+      width: 170px;
+    }
+  }
+  .shop_explanation {
+    font-size: 13px;
+    margin-top: 50px;
+    a {
+      text-decoration: none;
+      color: #cb9671;
+    }
+  }
+  .newsletter {
+    margin-top: 50px;
+    p {
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    h4 {
+      .registration {
+        font-weight: bold;
+        text-decoration: none;
+        color: #cb9671;
+        font-size: 18px;
+        &:hover {
+          color: #a07c62;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+.sf-top-bar {
+  background: #000;
+  color: #fff;
+}
+.sf-header__wrapper {
+  background: #000;
+  .sf-header__header {
+    .sf-header__actions {
+      .sf-header__navigation {
+        .sw-top-navigation {
+          .sf-header-navigation-item {
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

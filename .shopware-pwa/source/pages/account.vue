@@ -1,0 +1,151 @@
+<template>
+  <div :key="$route.fullPath" class="my-account">
+    <SfContentPages
+      :title="$t('My account')"
+      :active="activePage"
+      class="my-account__content"
+      @click:change="updateActivePage"
+    >
+      <SfContentCategory :title="$t('Personal Details')">
+        <SfContentPage :title="$t('My profile')">
+          <nuxt-child v-if="activePage === $t('My profile')" />
+        </SfContentPage>
+        <SfContentPage :title="$t('My addresses')">
+          <nuxt-child v-if="activePage === $t('My addresses')" />
+        </SfContentPage>
+      </SfContentCategory>
+      <SfContentCategory :title="$t('Order details')">
+        <SfContentPage :title="$tc('Order history', ordersCount)">
+          <nuxt-child v-if="activePage === $tc('Order history', ordersCount)" />
+        </SfContentPage>
+      </SfContentCategory>
+      <SfContentPage :title="$t('Logout')"></SfContentPage>
+    </SfContentPages>
+  </div>
+</template>
+
+<script>
+import { computed, ref } from "@vue/composition-api"
+import { SfContentPages } from "@storefront-ui/vue"
+import {
+  useUser,
+  useBreadcrumbs,
+  getApplicationContext,
+} from "@shopware-pwa/composables"
+import { PAGE_ACCOUNT, PAGE_LOGIN } from "@/helpers/pages"
+import authMiddleware from "@/middleware/auth"
+
+export default {
+  name: "AccountPage",
+
+  components: {
+    SfContentPages,
+  },
+
+  middleware: authMiddleware,
+
+  setup(props, { root }) {
+    const { route } = getApplicationContext({
+      contextName: "account-page",
+    })
+    const { logout, user } = useUser()
+    const { setBreadcrumbs } = useBreadcrumbs()
+    const ordersCount = computed(() => user.value && user.value.orderCount)
+
+    const subPageMap = {
+      "account-profile": root.$t("My profile"),
+      "account-addresses": root.$t("My addresses"),
+      "account-addresses-add-id": root.$t("My addresses"),
+      "account-orders": root.$tc("Order history", ordersCount.value),
+    }
+
+    const activePage = ref(subPageMap[route?.name])
+    setBreadcrumbs([
+      {
+        name: root.$t("My Account"),
+        path: PAGE_ACCOUNT,
+      },
+    ])
+    return { logout, user, ordersCount, activePage }
+  },
+
+  data() {
+    return {
+      allAddresses: [],
+    }
+  },
+
+  computed: {
+    activeBillingAddress() {
+      return (this.user && this.user && this.user.activeBillingAddress) || {}
+    },
+    activeShippingAddress() {
+      return (this.user && this.user && this.user.activeShippingAddress) || {}
+    },
+  },
+
+  watch: {
+    $route(to, from) {
+      if (to.name === "account-profile") {
+        this.activePage = this.$t("My profile")
+      }
+    },
+  },
+
+  methods: {
+    async updateActivePage(title) {
+      switch (title) {
+        case this.$t("My profile"):
+          this.$router.push(this.$routing.getUrl("/account/profile"))
+          break
+        case this.$t("My addresses"):
+          this.$router.push(this.$routing.getUrl("/account/addresses"))
+          break
+        case this.$tc("Order history", this.ordersCount):
+          this.$router.push(this.$routing.getUrl("/account/orders"))
+          break
+        case this.$t("Logout"):
+          await this.logout()
+          this.$router.push(this.$routing.getUrl(PAGE_LOGIN))
+          break
+      }
+      this.activePage = title
+    },
+  },
+}
+</script>
+
+<style lang="scss">
+.my-account .my-account__content,
+.my-account .sf-content-pages__content {
+  height: auto;
+}
+</style>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/variables";
+
+.my-account {
+  @include for-desktop {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--spacer-sm);
+  }
+  &__content {
+    @include for-mobile {
+      --content-pages-sidebar-category-title-font-weight: var(
+        --font-weight--normal
+      );
+      --content-pages-sidebar-category-title-margin: var(--spacer-sm)
+        var(--spacer-sm) var(--spacer-sm) var(--spacer-base);
+    }
+    @include for-desktop {
+      --content-pages-sidebar-flex: 0 0 20rem;
+      --content-pages-sidebar-category-title-margin: var(--spacer-xl) 0 0 0;
+      --content-pages-sidebar-padding: var(--spacer-xl);
+      --content-pages-content-padding: var(--spacer-xl);
+      --content-pages-sidebar-title-font-weight: var(--font-weight--normal);
+    }
+  }
+}
+</style>
